@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vthon Features - Language capabilities and syntax overview">
+  <meta name="theme-color" content="#2563eb">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vthon Features">
+  <meta property="og:description" content="Explore Vthon's language features - clean syntax, Python interop, classes, exceptions, and more">
+  <meta property="og:image" content="assets/images/og-image.png">
+  <meta property="og:url" content="https://chicken-dr.github.io/Vthon/features.html">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vthon Features">
+  <meta name="twitter:description" content="Explore Vthon's language features">
+
+  <title>Features - Vthon</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <header class="header" role="banner">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-brand" aria-label="Vthon Home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <span>Vthon</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Open menu" aria-controls="nav-menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+        <li role="none"><a href="download.html" class="nav-link" role="menuitem">Download</a></li>
+        <li role="none"><a href="documentation/index.html" class="nav-link" role="menuitem">Documentation</a></li>
+        <li role="none"><a href="features.html" class="nav-link active" role="menuitem">Features</a></li>
+        <li role="none"><a href="roadmap.html" class="nav-link" role="menuitem">Roadmap</a></li>
+        <li role="none"><a href="changelog.html" class="nav-link" role="menuitem">Changelog</a></li>
+        <li role="none"><a href="community.html" class="nav-link" role="menuitem">Community</a></li>
+        <li role="none"><a href="faq.html" class="nav-link" role="menuitem">FAQ</a></li>
+        <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+      </ul>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <a href="#main-content" class="skip-link" style="position: absolute; top: -100%; left: 50%; transform: translateX(-50%); padding: 1rem; background: var(--color-primary); color: white; z-index: 10000; border-radius: var(--radius-md);">Skip to main content</a>
+
+  <main id="main-content" role="main">
+    <section class="hero" style="padding-top: calc(var(--header-height) + 3rem); padding-bottom: 3rem;" aria-labelledby="features-title">
+      <div class="container">
+        <span class="hero-badge animate-fade-in-up">MVP 0.1.0</span>
+        <h1 id="features-title" class="animate-fade-in-up">Language Features</h1>
+        <p class="animate-fade-in-up delay-1" style="max-width: 600px; margin: 0 auto;">Clean syntax, Python interoperability, and modern language features — all transpiling to standard CPython</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="variables-title">
+      <div class="container">
+        <header style="margin-bottom: 2rem;">
+          <h2 id="variables-title">Variables & Constants</h2>
+          <p>Mutable bindings with <code>let</code>, compile-time protected constants with <code>const</code>.</p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+          <div>
+            <h3><code>let</code> - Mutable Variables</h3>
+            <div class="code-block">
+              <div class="code-block-header"><span>Vthon</span></div>
+              <pre><code>let x = 10
+let name = "Vthon"
+let enabled = true
+let nothing = null
+let values = [1, 2, 3]
+let user = {"name": "Ada"}
+
+# Reassignment allowed
+x = 20
+values.append(4)</code></pre>
+            </div>
+
+            <h3>Type Annotations (Optional)</h3>
+            <div class="code-block">
+              <pre><code>let x: int = 10
+let name: str = "Vthon"
+let items: list = [1, 2, 3]
+let data: dict = {"key": "value"}</code></pre>
+            </div>
+          </div>
+
+          <div>
+            <h3><code>const</code> - Compile-Time Constants</h3>
+            <div class="code-block">
+              <pre><code>const PI = 3.14159
+const MAX_SIZE = 100
+const DEFAULT_NAME = "unknown"
+const FLAGS = [true, false, true]
+
+# Compile-time error on reassignment:
+# PI = 3.14  # ERROR: cannot assign to constant 'PI'</code></pre>
+            </div>
+
+            <p><strong>Note:</strong> Constants are compile-time protection only. They are not a security boundary against mutation through aliases or Python reflection.</p>
+
+            <h3>Vthon Literals</h3>
+            <table>
+              <thead>
+                <tr><th>Vthon</th><th>Python</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><code>true</code></td><td><code>True</code></td></tr>
+                <tr><td><code>false</code></td><td><code>False</code></td></tr>
+                <tr><td><code>null</code></td><td><code>None</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background-color: var(--color-bg-secondary);" aria-labelledby="control-flow-title">
+      <div class="container">
+        <header style="margin-bottom: 2rem;">
+          <h2 id="control-flow-title">Control Flow</h2>
+          <p>Familiar conditional and loop constructs with indentation-based blocks.</p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <div>
+            <h3>If / Elif / Else</h3>
+            <div class="code-block">
+              <pre><code>let x = 10
+
+if x > 5:
+    print("large")
+elif x == 5:
+    print("equal")
+else:
+    print("small")
+
+# Ternary-like (expression)
+let result = "positive" if x > 0 else "negative"</code></pre>
+            </div>
+          </div>
+
+          <div>
+            <h3>While Loops</h3>
+            <div class="code-block">
+              <pre><code>let n = 5
+while n > 0:
+    print(n)
+    n -= 1
+
+# With break/continue
+while true:
+    let input = get_input()
+    if input == "quit":
+        break
+    if input == "":
+        continue
+    process(input)</code></pre>
+            </div>
+          </div>
+
+          <div>
+            <h3>For Loops</h3>
+            <div class="code-block">
+              <pre><code># Range iteration
+for i in range(5):
+    print(i)  # 0, 1, 2, 3, 4
+
+# Collection iteration
+for name in ["Ada", "Alan", "Grace"]:
+    print(name)
+
+# Dictionary iteration
+for key, value in {"a": 1, "b": 2}.items():
+    print(key, value)
+
+# With enumerate
+for i, item in enumerate(items):
+    print(i, item)</code></pre>
+            </div>
+          </div>
+
+          <div>
+            <h3>Loop Control</h3>
+            <div class="code-block">
+              <pre><code>for i in range(10):
+    if i == 3:
+        continue  # Skip 3
+    if i == 7:
+        break     # Stop at 7
+    print(i)
+
+# pass as placeholder
+if condition:
+    pass  # TODO: implement</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="functions-title">
+      <div class="container">
+        <header style="margin-bottom: 2rem;">
+          <h2 id="functions-title">Functions</h2>
+          <p>First-class functions with parameters, return values, and optional type annotations.</p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+          <div>
+            <h3>Basic Functions</h3>
+            <div class="code-block">
+              <pre><code>fn add(a, b):
+    return a + b
+
+fn greet(name: str) -> str:
+    return "Hello, " + name
+
+fn noop():
+    pass
+
+print(add(2, 3))     # 5
+print(greet("Ada"))  # Hello, Ada</code></pre>
+            </div>
+
+            <h3>Parameters</h3>
+            <div class="code-block">
+              <pre><code># Positional & keyword
+fn example(a, b=10):
+    return a + b
+
+example(1)       # 11
+example(1, 2)    # 3
+example(a=5)     # 15
+
+# *args, **kwargs
+fn variadic(*args, **kwargs):
+    print(args, kwargs)
+
+variadic(1, 2, x=3, y=4)</code></pre>
+            </div>
+          </div>
+
+          <div>
+            <h3>Return Values</h3>
+            <div class="code-block">
+              <pre><code>fn add(a, b):
+    return a + b
+
+fn early_return(x):
+    if x < 0:
+        return  # Returns null
+    return x * 2
+
+fn implicit_return():
+    42  # Last expression (not auto-returned)
+
+# Multiple returns
+fn divmod(a, b):
+    return a // b, a % b
+
+let q, r = divmod(10, 3)</code></pre>
+            </div>
+
+            <h3>Type Annotations</h3>
+            <div class="code-block">
+              <pre><code>fn add(a: int, b: int) -> int:
+    return a + b
+
+fn greet(name: str) -> str:
+    return "Hello, " + name
+
+fn process(items: list) -> dict:
+    return {"count": len(items)}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background-color: var(--color-bg-secondary);" aria-labelledby="classes-title">
+      <div class="container">
+        <header style="margin-bottom: 2rem;">
+          <h2 id="classes-title">Classes</h2>
+          <p>Object-oriented programming with implicit <code>self</code>, inheritance, and Python-compatible initialization.</p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+          <div>
+            <h3>Basic Classes</h3>
+            <div class="code-block">
+              <pre><code>class Person:
+    fn init(name):
+        self.name = name
+
+    fn greet():
+        return "Hello, " + self.name
+
+    fn set_age(age):
+        self.age = age
+
+let person = Person("Ada")
+person.set_age(36)
+print(person.greet())  # Hello, Ada</code></pre>
+            </div>
+
+            <h3>Inheritance</h3>
+            <div class="code-block">
+              <pre><code>class Employee(Person):
+    fn init(name, role):
+        super().init(name)
+        self.role = role
+
+    fn greet():
+        return super().greet() + " (Employee)"
+
+let emp = Employee("Alan", "Engineer")
+print(emp.greet())  # Hello, Alan (Employee)</code></pre>
+            </div>
+          </div>
+
+          <div>
+            <h3>Implicit Self Rules</h3>
+            <div class="code-block">
+              <pre><code>class Example:
+    # Implicit self added (no self/cls as first param)
+    fn method():
+        print(self)
+
+    # Explicit self - no implicit added
+    fn explicit(self):
+        print(self)
+
+    # Class method (cls as first param)
+    fn classmethod(cls):
+        print(cls)
+
+    # Static-like (no implicit, but not decorated)
+    fn static():
+        print("static")</code></pre>
+            </div>
+
+            <h3>Initialization</h3>
+            <p><code>fn init(...)</code> inside a class transpiles to Python's <code>__init__</code>:</p>
+            <div class="code-block">
+              <pre><code># Vthon
+class Point:
+    fn init(x, y):
+        self.x = x
+        self.y = y
+
+# Generated Python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="exceptions-title">
+      <div class="container">
+        <header style="margin-bottom: 2rem;">
+          <h2 id="exceptions-title">Exception Handling</h2>
+          <p>Full try/catch/finally support with Python-compatible semantics.</p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+          <div>
+            <h3>Try / Catch / Finally</h3>
+            <div class="code-block">
+              <pre><code>try:
+    raise ValueError("bad value")
+catch ValueError as error:
+    print("Caught:", error)
+catch TypeError:
+    print("Type error")
+catch:
+    print("Other exception")
+finally:
+    print("Cleanup always runs")</code></pre>
+            </div>
+
+            <h3>Rules</h3>
+            <ul>
+              <li>At least one <code>catch</code> or <code>finally</code> required</li>
+              <li><code>catch</code> without type catches all exceptions</li>
+              <li><code>as name</code> binds exception (optional)</li>
+              <li>Multiple <code>catch</code> clauses allowed</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Raise</h3>
+            <div class="code-block">
+              <pre><code># Raise exception
+raise ValueError("invalid input")
+
+# Raise with existing exception
+try:
+    risky()
+catch as error:
+    raise  # Re-raise
+
+# Raise any expression
+raise "string exception"  # Works (Python allows)</code></pre>
+            </div>
+
+            <h3>Transpilation</h3>
+            <div class="code-block">
+              <pre><code># Vthon
+try:
+    raise ValueError("bad")
+catch ValueError as error:
+    print(error)
+finally:
+    print("done")
+
+# Generated Python
+try:
+    raise ValueError("bad")
+except ValueError as error:
+    print(error)
+finally:
+    print("done")</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background-color: var(--color-bg-secondary);" aria-labelledby="interop-title">
+      <div class="container">
+        <header style="margin-bottom: 2rem;">
+          <h2 id="interop-title">Python Interoperability</h2>
+          <p>Explicit <code>py import</code> for seamless Python ecosystem access.</p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+          <div>
+            <h3>Import Syntax</h3>
+            <div class="code-block">
+              <pre><code># Explicit Python import
+py import requests
+py import numpy as np
+py from pathlib import Path
+py from json import dumps, loads
+
+# Plain imports also work (treated as py import)
+import math
+from datetime import datetime</code></pre>
+            </div>
+
+            <h3>Usage</h3>
+            <div class="code-block">
+              <pre><code>py import requests
+py from json import dumps
+
+let response = requests.get("https://api.github.com")
+print(response.status_code)
+
+let data = {"user": "Ada", "active": true}
+let json_str = dumps(data, sort_keys=true)
+print(json_str)</code></pre>
+            </div>
+          </div>
+
+          <div>
+            <h3>How It Works</h3>
+            <ul>
+              <li><code>py import</code> statements pass through to generated Python unchanged</li>
+              <li>Imported Python objects are available directly in Vthon scope</li>
+              <li>Vthon values use Python runtime representations (no wrapping)</li>
+              <li>Call Python functions, access attributes, pass Vthon values to Python</li>
+            </ul>
+
+            <h3>Popular Packages</h3>
+            <div class="code-block">
+              <pre><code># Web requests
+py import requests
+
+# Data science
+py import numpy as np
+py import pandas as pd
+
+# File system
+py from pathlib import Path
+
+# Async
+py import asyncio
+
+# All work natively!</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="tooling-title">
+      <div class="container">
+        <header style="margin-bottom: 2rem;">
+          <h2 id="tooling-title">Developer Tooling</h2>
+          <p>Built-in CLI, REPL, and diagnostic tools.</p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <article class="card animate-fade-in-up">
+            <div class="card-header"><h3>CLI Commands</h3></div>
+            <div class="card-body">
+              <div class="code-block">
+                <pre><code>vthon file.vth        # Run file
+vthon run file.vth    # Explicit run
+vthon repl            # Start REPL
+vthon --emit-python file.vth  # Show generated Python
+vthon --version       # Show version</code></pre>
+              </div>
+            </div>
+          </article>
+
+          <article class="card animate-fade-in-up delay-1">
+            <div class="card-header"><h3>REPL Features</h3></div>
+            <div class="card-body">
+              <ul>
+                <li>Multi-line block support (blank line executes)</li>
+                <li>Single-line immediate execution</li>
+                <li>Persistent namespace</li>
+                <li><kbd>Ctrl-D</kbd> / <kbd>Ctrl-C</kbd> to exit</li>
+              </ul>
+              <div class="code-block" style="margin-top: 1rem;">
+                <pre><code>>> let x = 10
+>>> print(x)
+10
+>>> fn double(n):
+...     return n * 2
+...
+>>> print(double(21))
+42</code></pre>
+              </div>
+            </div>
+          </article>
+
+          <article class="card animate-fade-in-up delay-2">
+            <div class="card-header"><h3>Diagnostics</h3></div>
+            <div class="card-body">
+              <p>Source-located errors for all phases:</p>
+              <div class="code-block">
+                <pre><code># Syntax error
+hello.vth:2:1: error: indentation must be multiple of 4
+  if true:
+  print(1)
+  ^
+
+# Compile error (const reassignment)
+hello.vth:3:5: error: cannot assign to constant 'PI'
+  const PI = 3.14
+  PI = 3.14
+    ^
+
+# Runtime error (Python exception)
+hello.vth:5:1: runtime error: ZeroDivisionError: division by zero
+  print(1 / 0)
+  ^</code></pre>
+              </div>
+            </div>
+          </article>
+
+          <article class="card animate-fade-in-up delay-3">
+            <div class="card-header"><h3>Programmatic API</h3></div>
+            <div class="card-body">
+              <div class="code-block">
+                <pre><code>import vthon.runtime as vthon
+
+# Parse to AST
+ast = vthon.parse(source)
+
+# Transpile only
+python = vthon.transpile(source)
+
+# Execute with custom namespace
+ns = vthon.execute(source, namespace={"x": 10})
+
+# Run file
+ns = vthon.run_file("program.vth")</code></pre>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section text-center" style="background-color: var(--color-bg-secondary);" aria-labelledby="features-cta-title">
+      <div class="container">
+        <h2 id="features-cta-title" class="animate-fade-in-up">Ready to Try These Features?</h2>
+        <p class="animate-fade-in-up delay-1" style="max-width: 600px; margin: 0 auto 2rem;">Install Vthon and start writing cleaner Python-compatible code today.</p>
+        <div class="btn-group animate-fade-in-up delay-2" style="justify-content: center;">
+          <a href="download.html" class="btn btn-primary btn-lg">Get Started</a>
+          <a href="documentation/language-spec.html" class="btn btn-secondary btn-lg">Read Full Spec</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-brand" aria-label="Vthon Home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <span>Vthon</span>
+          </a>
+          <p>A readable indentation-based programming language that transpiles to Python and runs on CPython.</p>
+        </div>
+
+        <nav class="footer-links" aria-label="Documentation">
+          <h4>Documentation</h4>
+          <ul>
+            <li><a href="documentation/index.html">Getting Started</a></li>
+            <li><a href="documentation/language-spec.html">Language Specification</a></li>
+            <li><a href="documentation/grammar.html">Grammar Reference</a></li>
+            <li><a href="documentation/architecture.html">Architecture</a></li>
+            <li><a href="documentation/api.html">API Reference</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-links" aria-label="Community">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://github.com/chicken-dr/Vthon" target="_blank" rel="noopener">GitHub Repository</a></li>
+            <li><a href="https://github.com/chicken-dr/Vthon/issues" target="_blank" rel="noopener">Issue Tracker</a></li>
+            <li><a href="https://github.com/chicken-dr/Vthon/discussions" target="_blank" rel="noopener">Discussions</a></li>
+            <li><a href="https://github.com/chicken-dr/Vthon/pulls" target="_blank" rel="noopener">Pull Requests</a></li>
+            <li><a href="community.html">Contributing Guide</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-links" aria-label="Resources">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Vthon Contributors. Licensed under MIT.</p>
+        <div class="footer-social">
+          <a href="https://github.com/chicken-dr/Vthon" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top" title="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" width="20" height="20">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

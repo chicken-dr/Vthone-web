@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vthon FAQ - Frequently asked questions about the Vthon programming language">
+  <meta name="theme-color" content="#2563eb">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vthon FAQ">
+  <meta property="og:description" content="Frequently asked questions about Vthon">
+  <meta property="og:image" content="assets/images/og-image.png">
+  <meta property="og:url" content="https://chicken-dr.github.io/Vthon/faq.html">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vthon FAQ">
+  <meta name="twitter:description" content="Frequently asked questions about Vthon">
+
+  <title>FAQ - Vthon</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <header class="header" role="banner">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-brand" aria-label="Vthon Home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <span>Vthon</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Open menu" aria-controls="nav-menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+        <li role="none"><a href="download.html" class="nav-link" role="menuitem">Download</a></li>
+        <li role="none"><a href="documentation/index.html" class="nav-link" role="menuitem">Documentation</a></li>
+        <li role="none"><a href="features.html" class="nav-link" role="menuitem">Features</a></li>
+        <li role="none"><a href="roadmap.html" class="nav-link" role="menuitem">Roadmap</a></li>
+        <li role="none"><a href="changelog.html" class="nav-link" role="menuitem">Changelog</a></li>
+        <li role="none"><a href="community.html" class="nav-link" role="menuitem">Community</a></li>
+        <li role="none"><a href="faq.html" class="nav-link active" role="menuitem">FAQ</a></li>
+        <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+      </ul>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <a href="#main-content" class="skip-link" style="position: absolute; top: -100%; left: 50%; transform: translateX(-50%); padding: 1rem; background: var(--color-primary); color: white; z-index: 10000; border-radius: var(--radius-md);">Skip to main content</a>
+
+  <main id="main-content" role="main">
+    <section class="hero" style="padding-top: calc(var(--header-height) + 3rem); padding-bottom: 3rem;" aria-labelledby="faq-title">
+      <div class="container">
+        <span class="hero-badge animate-fade-in-up">Frequently Asked</span>
+        <h1 id="faq-title" class="animate-fade-in-up">FAQ</h1>
+        <p class="animate-fade-in-up delay-1" style="max-width: 600px; margin: 0 auto;">Common questions about Vthon, answered.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="general-title">
+      <div class="container" style="max-width: 800px;">
+        <h2 id="general-title" class="animate-fade-in-up">General Questions</h2>
+
+        <details class="animate-fade-in-up" style="margin-bottom: 1rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+          <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; align-items: center; gap: 0.75rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; width: 20px; height: 20px; transition: transform var(--transition-fast);" class="faq-icon">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            What is Vthon?
+          </summary>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); color: var(--color-text-secondary);">
+            <p>Vthon is a small, readable, indentation-based programming language that transpiles to Python and runs on CPython. It has its own lexer, parser, AST, transpiler, CLI, and REPL—built from scratch without forking CPython.</p>
+          </div>
+        </details>
+
+        <details class="animate-fade-in-up delay-1" style="margin-bottom: 1rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+          <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; align-items: center; gap: 0.75rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; width: 20px; height: 20px; transition: transform var(--transition-fast);" class="faq-icon">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            Why not just use Python?
+          </summary>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); color: var(--color-text-secondary);">
+            <p>Vthon provides a cleaner syntax (no colons on simple statements, implicit self in methods, <code>let</code>/<code>const</code> declarations) while maintaining full Python ecosystem compatibility. You get the best of both worlds: Vthon's syntax for your code, Python's libraries for everything else.</p>
+          </div>
+        </details>
+
+        <details class="animate-fade-in-up delay-2" style="margin-bottom: 1rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+          <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; align-items: center; gap: 0.75rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; width: 20px; height: 20px; transition: transform var(--transition-fast);" class="faq-icon">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            Is Vthon a Python implementation?
+          </summary>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); color: var(--color-text-secondary);">
+            <p>No. Vthon transpiles to Python source code, which is then executed by the standard CPython interpreter. There's no custom VM or interpreter—your code runs on the same CPython you already use.</p>
+          </div>
+        </details>
+
+        <details class="animate-fade-in-up delay-3" style="margin-bottom: 1rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+          <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; align-items: center; gap: 0.75rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; width: 20px; height: 20px; transition: transform var(--transition-fast);" class="faq-icon">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            What's the current version and status?
+          </summary>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); color: var(--color-text-secondary);">
+            <p>Vthon is at <strong>MVP 0.1.0</strong> (released August 2026). It's a minimal viable product with core language features working. See the <a href="roadmap.html">Roadmap</a> for planned features.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" style="background-color: var(--color-bg-secondary);" aria-labelledby="technical-title">
+      <div class="container" style="max-width: 800px;">
+        <h2 id="technical-title" class="animate-fade-in-up">Technical Questions</h2>
+
+        <details class="animate-fade-in-up" style="margin-bottom: 1rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+          <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; align-items: center; gap: 0.75rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; width: 20px; height: 20px; transition: transform var(--transition-fast);" class="faq-icon">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            How does Python interoperability work?
+          </summary>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); color: var(--color-text-secondary);">
+            <p>Use <code>py import module</code> or <code>py from module import name</code> to import Python packages. These statements pass through to the generated Python unchanged. Imported objects are available directly in Vthon scope—no wrapping, no conversion needed. Vthon values use Python runtime representations.</p>
+          </div>
+        </details>
+
+        <details class="animate-fade-in-up delay-1" style="margin-bottom: 1rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+          <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; align-items: center; gap: 0.75rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; width: 20px; height: 20px; transition: transform var(--transition-fast);" class="faq-icon">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            Are <code>const</code> values truly immutable?
+          </summary>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); color: var(--color-text-secondary);">
+            <p><strong>No.</strong> Constants are a <strong>compile-time</strong> protection only. The transpiler rejects direct reassignment to a <code>const</code> name within the same compilation unit. However, mutation through aliases, container modification, or Python reflection is possible. It's a linting aid, not a security boundary.</p>
+          </div>
+        </details>
+
+        <details class="animate-fade-in-up delay-2" style="margin-bottom: 1rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+          <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; align-items: center; gap: 0.75rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; width: 20px; height: 20px; transition: transform var(--transition-fast);" class="faq-icon">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            How are expressions handled?
+          </summary>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); color: var(--color-text-secondary);">
+            <p>Expressions are kept as source strings during parsing and validated by the transpiler using Python's <code>ast.parse(mode='eval')</code>. Vthon literals <code>true</code>, <code>false</code>, <code>null</code> are converted to <code>True</code>, <code>False</code>, <code>None</code> during transpilation. All Python operators work.</p>
+          </div>
+        </details>
+
+        <details class="animate-fade-in-up delay-3" style="margin-bottom: 1rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+          <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; align-items: center; gap: 0.75rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; width: 20px; height: 20px; transition: transform var(--transition-fast);" class="faq-icon">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            What Python version is required?
+          </summary>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); color: var(--color-text-secondary);">
+            <p><strong>Python 3.10+</strong> is required. Vthon uses modern Python features like pattern matching (<code>match/case</code>) in the transpiler, and the generated code may use 3.10+ syntax.</p>
+          </div>
+        </details>
+
+        <details class="animate-fade-in-up delay-4" style="margin-bottom: 1rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+          <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; align-items: center; gap: 0.75rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; width: 20px; height: 20px; transition: transform var(--transition-fast);" class="faq-icon">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            Does Vthon have a standard library?
+          </summary>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); color: var(--color-text-secondary);">
+            <p>Not yet. The MVP relies entirely on Python's standard library via <code>py import</code>. A Vthon-native standard library is planned for v1.0+ (see <a href="roadmap.html">Roadmap</a>).</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="usage-title">
+      <div class="container" style="max-width: 800px;">
+        <h2 id="usage-title" class="animate-fade-in-up">Usage Questions</h2>
+
+        <details class="animate-fade-in-up" style="margin-bottom: 1rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+          <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; align-items: center; gap: 0.75rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; width: 20px; height: 20px; transition: transform var(--transition-fast);" class="faq-icon">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            How do I run a Vthon file?
+          </summary>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); color: var(--color-text-secondary);">
+            <div class="code-block">
+              <pre><code>vthon program.vth
+# or
+vthon run program.vth</code></pre>
+            </div>
+          </div>
+        </details>
+
+        <details class="animate-fade-in-up delay-1" style="margin-bottom: 1rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+          <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; align-items: center; gap: 0.75rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; width: 20px; height: 20px; transition: transform var(--transition-fast);" class="faq-icon">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            How do I see the generated Python?
+          </summary>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); color: var(--color-text-secondary);">
+            <div class="code-block">
+              <pre><code>vthon --emit-python program.vth</code></pre>
+            </div>
+          </div>
+        </details>
+
+        <details class="animate-fade-in-up delay-2" style="margin-bottom: 1rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+          <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; align-items: center; gap: 0.75rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; width: 20px; height: 20px; transition: transform var(--transition-fast);" class="faq-icon">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            Can I use Vthon as a library?
+          </summary>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); color: var(--color-text-secondary);">
+            <p>Yes. Import <code>vthon.runtime</code> and use <code>parse()</code>, <code>transpile()</code>, <code>execute()</code>, or <code>run_file()</code>. See the <a href="documentation/api.html">API Reference</a> for details.</p>
+          </div>
+        </details>
+
+        <details class="animate-fade-in-up delay-3" style="margin-bottom: 1rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+          <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; align-items: center; gap: 0.75rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; width: 20px; height: 20px; transition: transform var(--transition-fast);" class="faq-icon">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            Is there editor support?
+          </summary>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); color: var(--color-text-secondary);">
+            <p>Not yet. A Language Server (LSP) and VS Code extension are planned for v1.0+. For now, you can use Python syntax highlighting for <code>.vth</code> files since the syntax is similar.</p>
+          </div>
+        </details>
+
+        <details class="animate-fade-in-up delay-4" style="margin-bottom: 1rem; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem;">
+          <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; align-items: center; gap: 0.75rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; width: 20px; height: 20px; transition: transform var(--transition-fast);" class="faq-icon">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            How do I report a bug?
+          </summary>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); color: var(--color-text-secondary);">
+            <p>Open an issue on <a href="https://github.com/chicken-dr/Vthon/issues" target="_blank" rel="noopener">GitHub Issues</a> with a minimal reproduction case, your Vthon version (<code>vthon --version</code>), Python version, and OS.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section text-center" style="background-color: var(--color-bg-secondary);" aria-labelledby="faq-cta-title">
+      <div class="container">
+        <h2 id="faq-cta-title" class="animate-fade-in-up">Still Have Questions?</h2>
+        <p class="animate-fade-in-up delay-1" style="max-width: 600px; margin: 0 auto 2rem;">Ask the community or search existing discussions.</p>
+        <div class="btn-group animate-fade-in-up delay-2" style="justify-content: center;">
+          <a href="https://github.com/chicken-dr/Vthon/discussions" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Ask a Question</a>
+          <a href="https://github.com/chicken-dr/Vthon/discussions" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">Search Discussions</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-brand" aria-label="Vthon Home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <span>Vthon</span>
+          </a>
+          <p>A readable indentation-based programming language that transpiles to Python and runs on CPython.</p>
+        </div>
+
+        <nav class="footer-links" aria-label="Documentation">
+          <h4>Documentation</h4>
+          <ul>
+            <li><a href="documentation/index.html">Getting Started</a></li>
+            <li><a href="documentation/language-spec.html">Language Specification</a></li>
+            <li><a href="documentation/grammar.html">Grammar Reference</a></li>
+            <li><a href="documentation/architecture.html">Architecture</a></li>
+            <li><a href="documentation/api.html">API Reference</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-links" aria-label="Community">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://github.com/chicken-dr/Vthon" target="_blank" rel="noopener">GitHub Repository</a></li>
+            <li><a href="https://github.com/chicken-dr/Vthon/issues" target="_blank" rel="noopener">Issue Tracker</a></li>
+            <li><a href="https://github.com/chicken-dr/Vthon/discussions" target="_blank" rel="noopener">Discussions</a></li>
+            <li><a href="https://github.com/chicken-dr/Vthon/pulls" target="_blank" rel="noopener">Pull Requests</a></li>
+            <li><a href="community.html">Contributing Guide</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-links" aria-label="Resources">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Vthon Contributors. Licensed under MIT.</p>
+        <div class="footer-social">
+          <a href="https://github.com/chicken-dr/Vthon" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top" title="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" width="20" height="20">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

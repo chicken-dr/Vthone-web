@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vthon Language Specification - Draft 0.1">
+  <meta name="theme-color" content="#2563eb">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vthon Language Specification">
+  <meta property="og:description" content="Formal definition of the Vthon language syntax and semantics">
+  <meta property="og:image" content="../assets/images/og-image.png">
+  <meta property="og:url" content="https://chicken-dr.github.io/Vthon/documentation/language-spec.html">
+
+  <title>Language Specification - Vthon Documentation</title>
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <header class="header" role="banner">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="../index.html" class="nav-brand" aria-label="Vthon Home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <span>Vthon</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Open menu" aria-controls="nav-menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="../index.html" class="nav-link" role="menuitem">Home</a></li>
+        <li role="none"><a href="../download.html" class="nav-link" role="menuitem">Download</a></li>
+        <li role="none"><a href="index.html" class="nav-link active" role="menuitem">Documentation</a></li>
+        <li role="none"><a href="../features.html" class="nav-link" role="menuitem">Features</a></li>
+        <li role="none"><a href="../roadmap.html" class="nav-link" role="menuitem">Roadmap</a></li>
+        <li role="none"><a href="../changelog.html" class="nav-link" role="menuitem">Changelog</a></li>
+        <li role="none"><a href="../community.html" class="nav-link" role="menuitem">Community</a></li>
+        <li role="none"><a href="../faq.html" class="nav-link" role="menuitem">FAQ</a></li>
+        <li role="none"><a href="../about.html" class="nav-link" role="menuitem">About</a></li>
+      </ul>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <a href="#main-content" class="skip-link" style="position: absolute; top: -100%; left: 50%; transform: translateX(-50%); padding: 1rem; background: var(--color-primary); color: white; z-index: 10000; border-radius: var(--radius-md);">Skip to main content</a>
+
+  <main id="main-content" role="main">
+    <div style="display: grid; grid-template-columns: 280px 1fr; gap: 2rem; max-width: var(--max-width); margin: 0 auto; padding: calc(var(--header-height) + 2rem) 1.5rem 3rem;">
+      <!-- Table of Contents Sidebar -->
+      <aside class="doc-sidebar" style="position: sticky; top: calc(var(--header-height) + 1.5rem); height: fit-content; max-height: calc(100vh - var(--header-height) - 3rem); overflow-y: auto;" aria-label="Table of Contents">
+        <nav id="table-of-contents" class="doc-toc">
+          <h4 style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin-bottom: 1rem;">On This Page</h4>
+          <ul class="toc-list" style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 0.25rem;"><a href="#source-and-layout" style="display: block; padding: 0.375rem 0.75rem; color: var(--color-text-secondary); border-radius: var(--radius-sm); font-size: 0.9rem; text-decoration: none;">Source and Layout</a></li>
+            <li style="margin-bottom: 0.25rem;"><a href="#lexical-literals" style="display: block; padding: 0.375rem 0.75rem; color: var(--color-text-secondary); border-radius: var(--radius-sm); font-size: 0.9rem; text-decoration: none;">Lexical Literals</a></li>
+            <li style="margin-bottom: 0.25rem;"><a href="#bindings" style="display: block; padding: 0.375rem 0.75rem; color: var(--color-text-secondary); border-radius: var(--radius-sm); font-size: 0.9rem; text-decoration: none;">Bindings</a></li>
+            <li style="margin-bottom: 0.25rem;"><a href="#control-flow" style="display: block; padding: 0.375rem 0.75rem; color: var(--color-text-secondary); border-radius: var(--radius-sm); font-size: 0.9rem; text-decoration: none;">Control Flow</a></li>
+            <li style="margin-bottom: 0.25rem;"><a href="#functions" style="display: block; padding: 0.375rem 0.75rem; color: var(--color-text-secondary); border-radius: var(--radius-sm); font-size: 0.9rem; text-decoration: none;">Functions</a></li>
+            <li style="margin-bottom: 0.25rem;"><a href="#classes" style="display: block; padding: 0.375rem 0.75rem; color: var(--color-text-secondary); border-radius: var(--radius-sm); font-size: 0.9rem; text-decoration: none;">Classes</a></li>
+            <li style="margin-bottom: 0.25rem;"><a href="#imports-and-interoperability" style="display: block; padding: 0.375rem 0.75rem; color: var(--color-text-secondary); border-radius: var(--radius-sm); font-size: 0.9rem; text-decoration: none;">Imports and Interoperability</a></li>
+            <li style="margin-bottom: 0.25rem;"><a href="#exceptions" style="display: block; padding: 0.375rem 0.75rem; color: var(--color-text-secondary); border-radius: var(--radius-sm); font-size: 0.9rem; text-decoration: none;">Exceptions</a></li>
+            <li style="margin-bottom: 0.25rem;"><a href="#execution" style="display: block; padding: 0.375rem 0.75rem; color: var(--color-text-secondary); border-radius: var(--radius-sm); font-size: 0.9rem; text-decoration: none;">Execution</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <article class="doc-content" style="max-width: 800px;">
+        <header style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--color-border);">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <span class="badge badge-primary">Draft 0.1</span>
+            <span style="font-size: 0.875rem; color: var(--color-text-muted);">MVP 0.1.0</span>
+          </div>
+          <h1 style="margin-bottom: 0.5rem;">Language Specification</h1>
+          <p style="color: var(--color-text-secondary);">Formal definition of the Vthon language syntax, semantics, and execution model.</p>
+        </header>
+
+        <section id="source-and-layout" style="margin-bottom: 3rem;">
+          <h2>1. Source and Layout</h2>
+          
+          <h3>File Format</h3>
+          <ul>
+            <li><strong>Encoding:</strong> UTF-8</li>
+            <li><strong>Extension:</strong> <code>.vth</code></li>
+            <li><strong>Line endings:</strong> LF (Unix) or CRLF (Windows)</li>
+          </ul>
+
+          <h3>Indentation</h3>
+          <p>Blocks are defined by indentation using spaces only:</p>
+          <ul>
+            <li>Indentation must be a multiple of <strong>4 spaces</strong></li>
+            <li>Tabs are <strong>not allowed</strong> for indentation (compile-time error)</li>
+            <li>Inconsistent indentation within a block is an error</li>
+          </ul>
+
+          <div class="code-block">
+            <div class="code-block-header"><span>Valid</span></div>
+            <pre><code>fn example():
+    let x = 1
+    if x > 0:
+        print(x)
+    else:
+        print(-x)</code></pre>
+          </div>
+
+          <div class="code-block">
+            <div class="code-block-header"><span>Invalid (tabs)</span></div>
+            <pre><code>fn example():
+	let x = 1  # ERROR: tabs not allowed</code></pre>
+          </div>
+
+          <h3>Comments</h3>
+          <p>Comments start with <code>#</code> and extend to end of line. They are ignored outside of string literals.</p>
+          <div class="code-block">
+            <pre><code># This is a comment
+let x = 1  # Inline comment
+let s = "hello # not a comment"</code></pre>
+          </div>
+        </section>
+
+        <section id="lexical-literals" style="margin-bottom: 3rem;">
+          <h2>2. Lexical Literals</h2>
+
+          <h3>Numbers</h3>
+          <p>All Python 3.10+ numeric forms are supported:</p>
+          <table>
+            <thead>
+              <tr><th>Type</th><th>Examples</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Decimal</td><td><code>42</code>, <code>3.14</code>, <code>1e10</code></td></tr>
+              <tr><td>Binary</td><td><code>0b1010</code>, <code>0B1101</code></td></tr>
+              <tr><td>Octal</td><td><code>0o52</code>, <code>0O77</code></td></tr>
+              <tr><td>Hexadecimal</td><td><code>0x2a</code>, <code>0XFF</code></td></tr>
+              <tr><td>Underscores</td><td><code>1_000_000</code>, <code>0xFF_FF</code></td></tr>
+            </tbody>
+          </table>
+
+          <h3>Strings</h3>
+          <p>Single-quoted, double-quoted, and triple-quoted strings with escape sequences:</p>
+          <div class="code-block">
+            <pre><code>let single = 'hello'
+let double = "world"
+let multi = """line 1
+line 2"""
+let escaped = "tab:\t newline:\n quote:\""</code></pre>
+          </div>
+
+          <h3>Booleans</h3>
+          <p>Keywords <code>true</code> and <code>false</code> (lowercase) transpile to Python <code>True</code> and <code>False</code>.</p>
+
+          <h3>Null</h3>
+          <p>Keyword <code>null</code> transpiles to Python <code>None</code>.</p>
+
+          <h3>Collections</h3>
+          <p>List and dictionary displays use Python syntax:</p>
+          <div class="code-block">
+            <pre><code>let list = [1, 2, 3]
+let dict = {"name": "Ada", "age": 36}
+let nested = [{"x": 1}, {"x": 2}]</code></pre>
+          </div>
+
+          <h3>Expressions</h3>
+          <p>Expressions use Python-compatible operators (arithmetic, comparison, logical, bitwise, subscript, attribute access, calls). Vthon keywords <code>true</code>, <code>false</code>, <code>null</code> are accepted in expressions and converted during transpilation.</p>
+        </section>
+
+        <section id="bindings" style="margin-bottom: 3rem;">
+          <h2>3. Bindings</h2>
+
+          <h3>Variables (<code>let</code>)</h3>
+          <p>Mutable bindings created with <code>let</code>:</p>
+          <div class="code-block">
+            <pre><code>let x = 10
+let name = "Vthon"
+let items = [1, 2, 3]
+x = 20  # Reassignment allowed</code></pre>
+          </div>
+
+          <p>Optional type annotation (not enforced at runtime in MVP):</p>
+          <div class="code-block">
+            <pre><code>let x: int = 10
+let name: str = "Vthon"
+let items: list = [1, 2, 3]</code></pre>
+          </div>
+
+          <h3>Constants (<code>const</code>)</h3>
+          <p>Compile-time protected bindings created with <code>const</code>:</p>
+          <div class="code-block">
+            <pre><code>const PI = 3.14159
+const MAX_SIZE = 100
+const DEFAULT_NAME = "unknown"</code></pre>
+          </div>
+
+          <p>Reassignment to a <code>const</code> is a <strong>compile-time error</strong>:</p>
+          <div class="code-block">
+            <pre><code>const PI = 3.14159
+PI = 3.14  # ERROR: cannot assign to constant 'PI'</code></pre>
+          </div>
+
+          <blockquote>
+            <strong>Note:</strong> Constants are not a security boundary. Mutation through aliases or Python reflection is possible. The protection is compile-time only within the same compilation unit.
+          </blockquote>
+        </section>
+
+        <section id="control-flow" style="margin-bottom: 3rem;">
+          <h2>4. Control Flow</h2>
+
+          <h3>Conditional (<code>if</code>/<code>elif</code>/<code>else</code>)</h3>
+          <div class="code-block">
+            <pre><code>if x > 0:
+    print("positive")
+elif x < 0:
+    print("negative")
+else:
+    print("zero")</code></pre>
+          </div>
+
+          <h3>While Loop</h3>
+          <div class="code-block">
+            <pre><code>let n = 5
+while n > 0:
+    print(n)
+    n -= 1</code></pre>
+          </div>
+
+          <h3>For Loop</h3>
+          <div class="code-block">
+            <pre><code>for i in range(5):
+    print(i)
+
+for name in ["Ada", "Alan", "Grace"]:
+    print(name)</code></pre>
+          </div>
+
+          <h3>Loop Control</h3>
+          <ul>
+            <li><code>break</code> - Exit loop immediately</li>
+            <li><code>continue</code> - Skip to next iteration</li>
+            <li><code>pass</code> - No-op placeholder</li>
+          </ul>
+
+          <h3>Suites (Blocks)</h3>
+          <p>All compound statements use indented suites:</p>
+          <div class="code-block">
+            <pre><code>if condition:
+    statement1
+    statement2
+    # blank lines allowed</code></pre>
+          </div>
+          <p>Empty blocks require explicit <code>pass</code>.</p>
+        </section>
+
+        <section id="functions" style="margin-bottom: 3rem;">
+          <h2>5. Functions</h2>
+
+          <h3>Definition</h3>
+          <div class="code-block">
+            <pre><code>fn add(a, b):
+    return a + b
+
+fn greet(name: str) -> str:
+    return "Hello, " + name
+
+fn noop():
+    pass</code></pre>
+          </div>
+
+          <h3>Parameters</h3>
+          <p>Support positional, keyword, default values, <code>*args</code>, <code>**kwargs</code> (Python-compatible syntax):</p>
+          <div class="code-block">
+            <pre><code>fn example(a, b=10, *args, **kwargs):
+    pass</code></pre>
+          </div>
+
+          <h3>Return</h3>
+          <div class="code-block">
+            <pre><code>fn add(a, b):
+    return a + b
+
+fn no_return():
+    return  # Returns null</code></pre>
+          </div>
+
+          <h3>Type Annotations</h3>
+          <p>Optional parameter and return type annotations (Python syntax, not enforced at runtime):</p>
+          <div class="code-block">
+            <pre><code>fn add(a: int, b: int) -> int:
+    return a + b</code></pre>
+          </div>
+        </section>
+
+        <section id="classes" style="margin-bottom: 3rem;">
+          <h2>6. Classes</h2>
+
+          <h3>Definition</h3>
+          <div class="code-block">
+            <pre><code>class Person:
+    fn init(name):
+        self.name = name
+
+    fn greet():
+        return "Hello, " + self.name</code></pre>
+          </div>
+
+          <h3>Inheritance</h3>
+          <div class="code-block">
+            <pre><code>class Employee(Person):
+    fn init(name, role):
+        super().init(name)
+        self.role = role</code></pre>
+          </div>
+
+          <h3>Implicit Self</h3>
+          <p>Methods in a class receive implicit <code>self</code> as first parameter unless the first explicit parameter is <code>self</code> or <code>cls</code>:</p>
+          <div class="code-block">
+            <pre><code>class Example:
+    fn method():           # Receives implicit self
+        print(self)
+
+    fn explicit(self):     # Explicit self, no implicit added
+        print(self)
+
+    fn classmethod(cls):   # cls treated as class method
+        print(cls)</code></pre>
+          </div>
+
+          <h3>Initialization</h3>
+          <p><code>fn init(...)</code> inside a class transpiles to Python <code>def __init__(self, ...)</code>.</p>
+
+          <h3>Instantiation</h3>
+          <div class="code-block">
+            <pre><code>let person = Person("Ada")
+print(person.greet())</code></pre>
+          </div>
+        </section>
+
+        <section id="imports-and-interoperability" style="margin-bottom: 3rem;">
+          <h2>7. Imports and Interoperability</h2>
+
+          <h3>Explicit Python Imports (<code>py import</code>)</h3>
+          <p>Explicitly import Python modules with <code>py import</code>:</p>
+          <div class="code-block">
+            <pre><code>py import requests
+py import numpy as np
+py from pathlib import Path
+py from json import dumps, loads</code></pre>
+          </div>
+
+          <h3>Plain Imports</h3>
+          <p>Python-style imports are also accepted (treated as <code>py import</code>):</p>
+          <div class="code-block">
+            <pre><code>import math
+from datetime import datetime</code></pre>
+          </div>
+
+          <h3>Using Imported Objects</h3>
+          <p>Imported Python objects are available directly:</p>
+          <div class="code-block">
+            <pre><code>py import math
+py from json import dumps
+
+let result = math.sqrt(81)  # 9.0
+let json_str = dumps({"value": result}, sort_keys=true)
+print(json_str)</code></pre>
+          </div>
+
+          <blockquote>
+            <strong>Note:</strong> Vthon values use Python runtime representations. Imported objects cross the boundary directly with no wrapping.
+          </blockquote>
+        </section>
+
+        <section id="exceptions" style="margin-bottom: 3rem;">
+          <h2>8. Exceptions</h2>
+
+          <h3>Try/Catch/Finally</h3>
+          <div class="code-block">
+            <pre><code>try:
+    raise ValueError("bad value")
+catch ValueError as error:
+    print("Caught:", error)
+catch:
+    print("Caught unknown exception")
+finally:
+    print("Cleanup")</code></pre>
+          </div>
+
+          <h3>Rules</h3>
+          <ul>
+            <li>A <code>try</code> must have at least one <code>catch</code> or <code>finally</code></li>
+            <li><code>catch</code> without exception type catches all exceptions</li>
+            <li><code>as name</code> binds exception to variable (optional)</li>
+            <li>Multiple <code>catch</code> clauses allowed</li>
+            <li><code>finally</code> is optional, executes after try/catch</li>
+          </ul>
+
+          <h3>Raise</h3>
+          <div class="code-block">
+            <pre><code>raise ValueError("invalid input")
+raise  # Re-raise current exception (in catch block)</code></pre>
+          </div>
+        </section>
+
+        <section id="execution" style="margin-bottom: 3rem;">
+          <h2>9. Execution Model</h2>
+
+          <h3>Pipeline</h3>
+          <p>The implementation must follow this pipeline:</p>
+          <div class="code-block">
+            <pre><code>.vth source
+    → Lexer (indentation-aware tokens)
+    → Parser (recursive-descent, Vthon AST)
+    → Transpiler (Vthon AST → Python code)
+    → Python AST validation (ast.parse)
+    → compile()
+    → CPython exec()</code></pre>
+          </div>
+
+          <h3>Runtime Semantics</h3>
+          <ul>
+            <li>Vthon code executes in the active CPython runtime</li>
+            <li>Variables are module-scoped (like Python)</li>
+            <li>Functions create new scopes</li>
+            <li>Classes create class namespaces</li>
+            <li>No separate VM or interpreter - direct Python execution</li>
+          </ul>
+
+          <h3>Error Handling</h3>
+          <p>Three error categories with source locations:</p>
+          <table>
+            <thead>
+              <tr><th>Type</th><th>Phase</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>VthonSyntaxError</td><td>Lexing/Parsing</td><td>Invalid syntax, indentation errors</td></tr>
+              <tr><td>VthonCompileError</td><td>Transpilation</td><td>Constant reassignment, invalid generated Python</td></tr>
+              <tr><td>VthonRuntimeError</td><td>Execution</td><td>Python exceptions during execution</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <footer style="padding-top: 2rem; border-top: 1px solid var(--color-border);">
+          <p style="color: var(--color-text-muted); font-size: 0.875rem;">
+            This is a draft specification for Vthon 0.1.0. Subject to change.
+            <br>
+            <a href="https://github.com/chicken-dr/Vthon/blob/main/docs/language-spec.md" target="_blank" rel="noopener">View source on GitHub</a>
+          </p>
+        </footer>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-brand" aria-label="Vthon Home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <span>Vthon</span>
+          </a>
+          <p>A readable indentation-based programming language that transpiles to Python and runs on CPython.</p>
+        </div>
+
+        <nav class="footer-links" aria-label="Documentation">
+          <h4>Documentation</h4>
+          <ul>
+            <li><a href="index.html">Getting Started</a></li>
+            <li><a href="language-spec.html">Language Specification</a></li>
+            <li><a href="grammar.html">Grammar Reference</a></li>
+            <li><a href="architecture.html">Architecture</a></li>
+            <li><a href="api.html">API Reference</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-links" aria-label="Community">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://github.com/chicken-dr/Vthon" target="_blank" rel="noopener">GitHub Repository</a></li>
+            <li><a href="https://github.com/chicken-dr/Vthon/issues" target="_blank" rel="noopener">Issue Tracker</a></li>
+            <li><a href="https://github.com/chicken-dr/Vthon/discussions" target="_blank" rel="noopener">Discussions</a></li>
+            <li><a href="https://github.com/chicken-dr/Vthon/pulls" target="_blank" rel="noopener">Pull Requests</a></li>
+            <li><a href="../community.html">Contributing Guide</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-links" aria-label="Resources">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="../download.html">Download</a></li>
+            <li><a href="../features.html">Features</a></li>
+            <li><a href="../roadmap.html">Roadmap</a></li>
+            <li><a href="../changelog.html">Changelog</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Vthon Contributors. Licensed under MIT.</p>
+        <div class="footer-social">
+          <a href="https://github.com/chicken-dr/Vthon" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top" title="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" width="20" height="20">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

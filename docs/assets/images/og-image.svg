@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0f0f1a"/>
+  <text x="600" y="280" font-family="system-ui, sans-serif" font-size="72" font-weight="700" fill="white" text-anchor="middle">Vthon</text>
+  <text x="600" y="350" font-family="system-ui, sans-serif" font-size="28" fill="#94a3b8" text-anchor="middle">Transpiled to Python</text>
+  <text x="600" y="420" font-family="system-ui, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">A readable indentation-based language</text>
+  <path d="M550 500L450 540l100 60 100-60-100-60zM450 570l100 60 100-60M450 540l100 60 100-60" stroke="#3b82f6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

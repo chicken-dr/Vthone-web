@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vthon Community - Contributing, guidelines, and community resources">
+  <meta name="theme-color" content="#2563eb">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vthon Community">
+  <meta property="og:description" content="Join the Vthon community - contribute, discuss, and help shape the language">
+  <meta property="og:image" content="assets/images/og-image.png">
+  <meta property="og:url" content="https://chicken-dr.github.io/Vthon/community.html">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vthon Community">
+  <meta name="twitter:description" content="Join the Vthon community">
+
+  <title>Community - Vthon</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <header class="header" role="banner">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-brand" aria-label="Vthon Home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <span>Vthon</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Open menu" aria-controls="nav-menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+        <li role="none"><a href="download.html" class="nav-link" role="menuitem">Download</a></li>
+        <li role="none"><a href="documentation/index.html" class="nav-link" role="menuitem">Documentation</a></li>
+        <li role="none"><a href="features.html" class="nav-link" role="menuitem">Features</a></li>
+        <li role="none"><a href="roadmap.html" class="nav-link" role="menuitem">Roadmap</a></li>
+        <li role="none"><a href="changelog.html" class="nav-link" role="menuitem">Changelog</a></li>
+        <li role="none"><a href="community.html" class="nav-link active" role="menuitem">Community</a></li>
+        <li role="none"><a href="faq.html" class="nav-link" role="menuitem">FAQ</a></li>
+        <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+      </ul>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <a href="#main-content" class="skip-link" style="position: absolute; top: -100%; left: 50%; transform: translateX(-50%); padding: 1rem; background: var(--color-primary); color: white; z-index: 10000; border-radius: var(--radius-md);">Skip to main content</a>
+
+  <main id="main-content" role="main">
+    <section class="hero" style="padding-top: calc(var(--header-height) + 3rem); padding-bottom: 3rem;" aria-labelledby="community-title">
+      <div class="container">
+        <span class="hero-badge animate-fade-in-up">Open Source</span>
+        <h1 id="community-title" class="animate-fade-in-up">Community</h1>
+        <p class="animate-fade-in-up delay-1" style="max-width: 600px; margin: 0 auto;">Join us in building Vthon. Contribute code, report issues, improve docs, or just say hello.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="links-title">
+      <div class="container">
+        <header style="margin-bottom: 2rem;">
+          <h2 id="links-title">Community Links</h2>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <a href="https://github.com/chicken-dr/Vthon" target="_blank" rel="noopener" class="card animate-fade-in-up" style="text-decoration: none; color: inherit;">
+            <div class="card-header">
+              <h3>GitHub Repository</h3>
+            </div>
+            <div class="card-body">
+              <p>Source code, releases, and project management.</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/chicken-dr/Vthon/issues" target="_blank" rel="noopener" class="card animate-fade-in-up delay-1" style="text-decoration: none; color: inherit;">
+            <div class="card-header">
+              <h3>Issue Tracker</h3>
+            </div>
+            <div class="card-body">
+              <p>Report bugs, request features, track progress.</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/chicken-dr/Vthon/discussions" target="_blank" rel="noopener" class="card animate-fade-in-up delay-2" style="text-decoration: none; color: inherit;">
+            <div class="card-header">
+              <h3>Discussions</h3>
+            </div>
+            <div class="card-body">
+              <p>Ask questions, share ideas, get help from the community.</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/chicken-dr/Vthon/pulls" target="_blank" rel="noopener" class="card animate-fade-in-up delay-3" style="text-decoration: none; color: inherit;">
+            <div class="card-header">
+              <h3>Pull Requests</h3>
+            </div>
+            <div class="card-body">
+              <p>Review and contribute code changes.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background-color: var(--color-bg-secondary);" aria-labelledby="contributing-title">
+      <div class="container">
+        <header style="margin-bottom: 2rem;">
+          <h2 id="contributing-title">Contributing</h2>
+          <p>We welcome contributions of all kinds!</p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+          <article class="card animate-fade-in-up">
+            <div class="card-header">
+              <h3>Ways to Contribute</h3>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li><strong>Code:</strong> Fix bugs, implement features, improve performance</li>
+                <li><strong>Documentation:</strong> Fix typos, add examples, improve guides</li>
+                <li><strong>Testing:</strong> Add test cases, report bugs, verify fixes</li>
+                <li><strong>Examples:</strong> Create example programs showcasing features</li>
+                <li><strong>Design:</strong> Logo, website improvements, UX feedback</li>
+                <li><strong>Community:</strong> Answer questions, mentor newcomers</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card animate-fade-in-up delay-1">
+            <div class="card-header">
+              <h3>Development Setup</h3>
+            </div>
+            <div class="card-body">
+              <div class="code-block">
+                <div class="code-block-header"><span>Terminal</span></div>
+                <pre><code># Clone repository
+git clone https://github.com/chicken-dr/Vthon.git
+cd Vthon
+
+# Install in development mode
+python -m pip install -e .
+
+# Run tests
+python -m pytest -q
+
+# Try the REPL
+vthon repl</code></pre>
+              </div>
+            </div>
+          </article>
+
+          <article class="card animate-fade-in-up delay-2">
+            <div class="card-header">
+              <h3>Pull Request Process</h3>
+            </div>
+            <div class="card-body">
+              <ol>
+                <li>Fork the repository</li>
+                <li>Create a feature branch</li>
+                <li>Make your changes</li>
+                <li>Run tests: <code>python -m pytest -q</code></li>
+                <li>Ensure code passes linting</li>
+                <li>Submit PR with clear description</li>
+                <li>Address review feedback</li>
+              </ol>
+            </div>
+          </article>
+
+          <article class="card animate-fade-in-up delay-3">
+            <div class="card-header">
+              <h3>Code Style</h3>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Python 3.10+ syntax</li>
+                <li>Type hints encouraged</li>
+                <li>Docstrings for public APIs</li>
+                <li>Follow existing patterns in codebase</li>
+                <li>Keep functions small and focused</li>
+                <li>Tests for new functionality</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="guidelines-title">
+      <div class="container">
+        <header style="margin-bottom: 2rem;">
+          <h2 id="guidelines-title">Community Guidelines</h2>
+        </header>
+
+        <div class="card animate-fade-in-up" style="max-width: 800px; margin: 0 auto;">
+          <div class="card-body">
+            <h3>Code of Conduct</h3>
+            <p>We follow the <a href="https://www.contributor-covenant.org/" target="_blank" rel="noopener">Contributor Covenant</a>. In short:</p>
+            <ul>
+              <li>Be respectful and inclusive</li>
+              <li>Welcome newcomers and help them learn</li>
+              <li>Focus on constructive criticism</li>
+              <li>No harassment, discrimination, or spam</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">Communication Channels</h3>
+            <table>
+              <thead>
+                <tr><th>Channel</th><th>Purpose</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>GitHub Issues</td><td>Bug reports, feature requests, task tracking</td></tr>
+                <tr><td>GitHub Discussions</td><td>Questions, ideas, general discussion</td></tr>
+                <tr><td>Pull Requests</td><td>Code review, design discussion</td></tr>
+              </tbody>
+            </table>
+
+            <h3 style="margin-top: 2rem;">Getting Help</h3>
+            <ul>
+              <li>Check existing <a href="https://github.com/chicken-dr/Vthon/issues" target="_blank" rel="noopener">issues</a> first</li>
+              <li>Search <a href="https://github.com/chicken-dr/Vthon/discussions" target="_blank" rel="noopener">discussions</a> for answers</li>
+              <li>Read the <a href="documentation/index.html">documentation</a></li>
+              <li>Open a new discussion for questions</li>
+              <li>File a bug report for confirmed issues</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section text-center" style="background-color: var(--color-bg-secondary);" aria-labelledby="community-cta-title">
+      <div class="container">
+        <h2 id="community-cta-title" class="animate-fade-in-up">Ready to Contribute?</h2>
+        <p class="animate-fade-in-up delay-1" style="max-width: 600px; margin: 0 auto 2rem;">Pick up a <a href="https://github.com/chicken-dr/Vthon/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" target="_blank" rel="noopener">good first issue</a> or start a discussion.</p>
+        <div class="btn-group animate-fade-in-up delay-2" style="justify-content: center;">
+          <a href="https://github.com/chicken-dr/Vthon/issues/new" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Report Issue</a>
+          <a href="https://github.com/chicken-dr/Vthon/discussions/new" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">Start Discussion</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-brand" aria-label="Vthon Home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <span>Vthon</span>
+          </a>
+          <p>A readable indentation-based programming language that transpiles to Python and runs on CPython.</p>
+        </div>
+
+        <nav class="footer-links" aria-label="Documentation">
+          <h4>Documentation</h4>
+          <ul>
+            <li><a href="documentation/index.html">Getting Started</a></li>
+            <li><a href="documentation/language-spec.html">Language Specification</a></li>
+            <li><a href="documentation/grammar.html">Grammar Reference</a></li>
+            <li><a href="documentation/architecture.html">Architecture</a></li>
+            <li><a href="documentation/api.html">API Reference</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-links" aria-label="Community">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://github.com/chicken-dr/Vthon" target="_blank" rel="noopener">GitHub Repository</a></li>
+            <li><a href="https://github.com/chicken-dr/Vthon/issues" target="_blank" rel="noopener">Issue Tracker</a></li>
+            <li><a href="https://github.com/chicken-dr/Vthon/discussions" target="_blank" rel="noopener">Discussions</a></li>
+            <li><a href="https://github.com/chicken-dr/Vthon/pulls" target="_blank" rel="noopener">Pull Requests</a></li>
+            <li><a href="community.html">Contributing Guide</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-links" aria-label="Resources">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Vthon Contributors. Licensed under MIT.</p>
+        <div class="footer-social">
+          <a href="https://github.com/chicken-dr/Vthon" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top" title="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" width="20" height="20">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
