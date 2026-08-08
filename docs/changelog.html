@@ -153,39 +153,40 @@
       </div>
     </section>
 
-    <section class="section" style="background-color: var(--color-bg-secondary);" aria-labelledby="unreleased-title">
+    <section class="section" aria-labelledby="v0-2-0-title">
       <div class="container">
         <article class="card animate-fade-in-up" style="max-width: 900px; margin: 0 auto;">
           <div class="card-header">
             <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-              <h2 id="unreleased-title" style="margin: 0;">Unreleased (main branch)</h2>
-              <span class="badge badge-warning">In Development</span>
+              <h2 id="v0-2-0-title" style="margin: 0;">Version 0.2.0</h2>
+              <span class="badge badge-success">Released</span>
+              <span style="margin-left: auto; color: var(--color-text-muted); font-size: 0.875rem;">2026-08-07</span>
             </div>
           </div>
           <div class="card-body">
-            <p>Changes in the main branch since v0.1.0 that will be part of the next release.</p>
+            <p>Major feature release adding pattern matching, decorators, list comprehensions, with statements, and more.</p>
 
-            <h3 style="margin: 1.5rem 0 1rem;">In Progress</h3>
+            <h3 style="margin: 2rem 0 1rem;">Added</h3>
             <ul>
-              <li><strong>Pattern Matching:</strong> <code>match</code>/<code>case</code> statement (PR #1)
-                <ul>
-                  <li>AST nodes: <code>MatchStmt</code>, <code>MatchClause</code></li>
-                  <li>Parser with guard support (<code>case X if Y:</code>)</li>
-                  <li>Wildcard pattern (<code>case _:</code>)</li>
-                  <li>Transpilation to Python <code>match/case</code></li>
-                  <li>6+ test cases</li>
-                  <li>Example: <code>examples/match_case.vth</code></li>
-                </ul>
-              </li>
+              <li><strong>Pattern Matching:</strong> <code>match</code>/<code>case</code> statement with guards, wildcards, and structural patterns (transpiles to Python <code>match/case</code>)</li>
+              <li><strong>Decorators:</strong> <code>@decorator</code> syntax for functions with multiple decorator support</li>
+              <li><strong>List Comprehensions:</strong> <code>[expr for target in iterable if condition]</code> syntax</li>
+              <li><strong>With Statements:</strong> Context manager support with <code>with expr as target:</code></li>
+              <li><strong>Enhanced AST:</strong> New node types: <code>MatchStmt</code>, <code>MatchClause</code>, <code>ListComprehension</code>, <code>DecoratedFunction</code>, <code>WithStatement</code>, <code>WithItem</code></li>
+              <li><strong>Lexer:</strong> New <code>DECORATOR</code> token type</li>
+              <li><strong>Parser:</strong> Decorator handling, list comprehension parsing, with statement parsing, match/case parsing</li>
             </ul>
 
-            <h3 style="margin: 1.5rem 0 1rem;">Planned</h3>
+            <h3 style="margin: 2rem 0 1rem;">Changed</h3>
             <ul>
-              <li>Module system for Vthon code</li>
-              <li>Enhanced type annotations</li>
-              <li>Async/await support</li>
-              <li>Decorators</li>
-              <li>Generators (<code>yield</code>)</li>
+              <li>Version bumped to 0.2.0</li>
+              <li>Updated documentation to reflect v0.2.0 features</li>
+            </ul>
+
+            <h3 style="margin: 2rem 0 1rem;">Testing</h3>
+            <ul>
+              <li>All existing tests pass</li>
+              <li>New test cases for pattern matching, decorators, list comprehensions, with statements</li>
             </ul>
           </div>
         </article>

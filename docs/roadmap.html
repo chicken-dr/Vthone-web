@@ -80,35 +80,34 @@
       <div class="container">
         <span class="hero-badge animate-fade-in-up">Planning</span>
         <h1 id="roadmap-title" class="animate-fade-in-up">Roadmap</h1>
-        <p class="animate-fade-in-up delay-1" style="max-width: 600px; margin: 0 auto;">Planned features and development priorities for Vthon beyond MVP 0.1.0</p>
+        <p class="animate-fade-in-up delay-1" style="max-width: 600px; margin: 0 auto;">Planned features and development priorities for Vthon beyond v0.2.0</p>
       </div>
     </section>
 
     <section class="section" aria-labelledby="current-focus-title">
       <div class="container">
         <header style="margin-bottom: 2rem;">
-          <h2 id="current-focus-title">Current Focus: Pattern Matching (v0.2.0)</h2>
+          <h2 id="current-focus-title">Released in v0.2.0: Pattern Matching & More</h2>
           <p>Active development tracked in <a href="https://github.com/chicken-dr/Vthon/pull/1" target="_blank" rel="noopener">PR #1</a></p>
         </header>
 
         <div class="card animate-fade-in-up">
           <div class="card-body">
             <div style="display: flex; align-items: flex-start; gap: 1rem;">
-              <span class="badge badge-primary" style="flex-shrink: 0; margin-top: 0.25rem;">In Progress</span>
+              <span class="badge badge-success" style="flex-shrink: 0; margin-top: 0.25rem;">Released</span>
               <div>
                 <h3 style="margin-bottom: 0.5rem;">Match/Case Pattern Matching</h3>
-                <p>Add structural pattern matching following Python 3.10+ semantics.</p>
+                <p>Structural pattern matching following Python 3.10+ semantics has been implemented in v0.2.0.</p>
                 
-                <h4 style="margin: 1rem 0 0.5rem;">Planned Implementation:</h4>
+                <h4 style="margin: 1rem 0 0.5rem;">Implemented in v0.2.0:</h4>
                 <ul>
-                  <li>Add <code>MatchStmt</code> and <code>MatchClause</code> AST nodes</li>
+                  <li>MatchStmt and MatchClause AST nodes</li>
                   <li>Parser support for <code>match expr:</code> with indented <code>case</code> clauses</li>
                   <li>Guard support: <code>case pattern if condition:</code></li>
                   <li>Wildcard pattern: <code>case _:</code></li>
                   <li>Literal, sequence, mapping, and class patterns</li>
                   <li>Transpilation to Python <code>match/case</code></li>
-                  <li>6+ test cases covering basic, guards, wildcards, list patterns</li>
-                  <li>Example file: <code>examples/match_case.vth</code></li>
+                  <li>Test cases covering basic, guards, wildcards, list patterns</li>
                 </ul>
 
                 <div class="code-block" style="margin-top: 1.5rem;">
